@@ -14,6 +14,7 @@
               <li><a href="{{route('home')}}" id="home">Home</a></li>
               <li><a href="{{route('todayspecial')}}" id="todayspecial">Today Special</a></li>
               <li><a href="{{route('menu')}}" id="menu">Menu</a></li>
+              <li><a href="{{route('foodmenu')}}" id="foodmenu">Food Menu</a></li>
               <li><a href="{{route('contact.index')}}" id="contact">Contact</a></li>
             </ul>
           </nav>

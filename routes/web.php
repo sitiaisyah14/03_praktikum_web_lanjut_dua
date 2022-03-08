@@ -13,27 +13,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TodayController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\FoodMenuController;
+use App\Http\Controllers\ContactController;
+
 // Route Home
-Route::get('/', function () {
-    return view('index');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 // Route Prefix
-Route::prefix('product')->group(function () {
-    Route::get('today-special', function () {
-        return view('today');
-    })->name('todayspecial');
-});
+Route::get('todayspecial', [TodayController::class, 'today'])->name('todayspecial');
 
 // Route Biasa
-Route::get('menu', function () {
-    return view('menu');
-})->name('menu');
+Route::get('menu', [MenuController::class, 'menu'])->name('menu');
 
+Route::get('foodmenu', [FoodMenuController::class, 'foodmenu'])->name('foodmenu');
 
 // Route Resource
-use App\Http\Controllers\ContactController;
-
 Route::resource('contact', ContactController::class);
 
